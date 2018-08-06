@@ -1,0 +1,23 @@
+.header-logo {
+  display: inline-block;
+  margin-right: 50px;
+
+  &__text {
+    font-size: 1.4rem;
+    font-family: "Yandex Sans Text", Arial, Helvetica, sans-serif;
+    color: #151515;
+    line-height: 27px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    transform: scaleY(1.4);
+    display: inline-block;
+
+    &:last-child {
+      font-weight: 300;
+    }
+
+    &:first-child:first-letter {
+      color: #ff0000;
+    }
+  }
+}

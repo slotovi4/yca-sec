@@ -1,0 +1,40 @@
+.header-mobile-btn {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  right: 40px;
+
+  &__line {
+    width: 1rem;
+    height: 3px;
+    background-color: $primary-text-color;
+    transition: all 0.5s ease-out;
+    margin-bottom: 3px;
+    border-radius: 5px;
+
+    /*Transform To X */
+    &_close {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -5px);
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Rotate Into X With Menu Lines */
+    &_close {
+      transform: rotate(180deg);
+    }
+  }
+}

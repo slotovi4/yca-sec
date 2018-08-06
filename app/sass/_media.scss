@@ -1,0 +1,35 @@
+/* Mobile */
+@media screen and (max-width: 576px) {
+  .header {
+    padding: 40px;
+
+    &__menu {
+      visibility: hidden;
+      position: fixed;
+      background-color: rgba($primary-text-color, 0.1);
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: translate3d(0, -100%, 0);
+      transition: all 0.5s ease-out;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__link {
+      padding: 0;
+      line-height: 30px;
+    }
+  }
+
+  .header-logo {
+    margin: 0;
+  }
+
+  .header-mobile-btn {
+    display: block;
+  }
+}
