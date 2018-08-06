@@ -8,13 +8,16 @@
   &__link {
     font-size: 1rem;
     line-height: 20px;
-    font-family: Arial, Helvetica, sans-serif;
     color: rgba($primary-text-color, 0.6);
     font-weight: 600;
     padding-right: 25px;
 
     &_active {
       color: $primary-text-color;
+    }
+
+    &:hover {
+      color: #c00;
     }
 
     &:last-child {

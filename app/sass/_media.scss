@@ -1,7 +1,8 @@
 /* Mobile */
 @media screen and (max-width: 576px) {
   .header {
-    padding: 40px;
+    padding: 12px 20px 15px 20px;
+    border: none;
 
     &__menu {
       visibility: hidden;
