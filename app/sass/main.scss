@@ -10,6 +10,7 @@
 /* Container */
 @import "container/container";
 @import "container/container-block/container-block";
+@import "container/container-slide/container-slide";
 
 /* Weather */
 @import "weather/weather";
@@ -19,6 +20,9 @@
 
 /* Favorites-scenarios */
 @import "favorites-scenarios/favorites-scenarios";
+
+/* Favorites device */
+@import "favorites-device/favorites-device";
 
 /* Media */
 @import "media";

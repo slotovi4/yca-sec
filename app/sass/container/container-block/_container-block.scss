@@ -16,35 +16,26 @@
     top: 15px;
     width: 24px;
     height: 24px;
+    filter: grayscale(1);
 
     &-temp {
       background-image: url("../img/container/container__block/temp.png");
-      filter: grayscale(1);
-
-      &_active {
-        filter: grayscale(0);
-      }
     }
 
     &-sun {
       background-image: url("../img/container/container__block/sun.png");
-      filter: grayscale(1);
-
-      &_active {
-        filter: grayscale(0);
-      }
     }
 
     &-time {
       background-image: url("../img/container/container__block/time.png");
-      filter: grayscale(1);
+    }
 
-      &_active {
-        filter: grayscale(0);
-      }
+    &_active {
+      filter: grayscale(0);
     }
 
     background-position: center;
+    background-repeat: no-repeat;
   }
 
   &:hover {
@@ -55,6 +46,15 @@
   &_planned {
     height: 120px;
     margin-bottom: 15px;
+  }
+
+  &_device {
+    height: 120px;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__title {

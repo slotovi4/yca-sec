@@ -1,0 +1,28 @@
+.container-slide {
+  height: 16px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 10px;
+
+  &__arrow {
+    background-image: url("../img/container/container-slide/right-arrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 7px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+
+    &_prev {
+      margin-right: 20px;
+    }
+
+    &_next {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__active {
+  }
+}
