@@ -17,25 +17,34 @@
     width: 24px;
     height: 24px;
 
-    &_temp {
+    &-temp {
       background-image: url("../img/container/container__block/temp.png");
+      filter: grayscale(1);
+
+      &_active {
+        filter: grayscale(0);
+      }
     }
 
-    &_temp-active {
-      background-image: url("../img/container/container__block/temp-active.png");
-    }
-
-    &_sun {
+    &-sun {
       background-image: url("../img/container/container__block/sun.png");
+      filter: grayscale(1);
+
+      &_active {
+        filter: grayscale(0);
+      }
     }
 
-    &_sun-active {
-      background-image: url("../img/container/container__block/sun-active.png");
-    }
-
-    &_time {
+    &-time {
       background-image: url("../img/container/container__block/time.png");
+      filter: grayscale(1);
+
+      &_active {
+        filter: grayscale(0);
+      }
     }
+
+    background-position: center;
   }
 
   &:hover {

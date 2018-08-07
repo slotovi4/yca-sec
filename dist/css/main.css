@@ -205,17 +205,23 @@ a {
     position: absolute;
     top: 15px;
     width: 24px;
-    height: 24px; }
-    .container-block__icon_temp {
-      background-image: url("../img/container/container__block/temp.png"); }
-    .container-block__icon_temp-active {
-      background-image: url("../img/container/container__block/temp-active.png"); }
-    .container-block__icon_sun {
-      background-image: url("../img/container/container__block/sun.png"); }
-    .container-block__icon_sun-active {
-      background-image: url("../img/container/container__block/sun-active.png"); }
-    .container-block__icon_time {
-      background-image: url("../img/container/container__block/time.png"); }
+    height: 24px;
+    background-position: center; }
+    .container-block__icon-temp {
+      background-image: url("../img/container/container__block/temp.png");
+      filter: grayscale(1); }
+      .container-block__icon-temp_active {
+        filter: grayscale(0); }
+    .container-block__icon-sun {
+      background-image: url("../img/container/container__block/sun.png");
+      filter: grayscale(1); }
+      .container-block__icon-sun_active {
+        filter: grayscale(0); }
+    .container-block__icon-time {
+      background-image: url("../img/container/container__block/time.png");
+      filter: grayscale(1); }
+      .container-block__icon-time_active {
+        filter: grayscale(0); }
   .container-block:hover {
     background-color: white;
     box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5); }
