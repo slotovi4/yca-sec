@@ -80,11 +80,13 @@
 
 html,
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   height: 100%;
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  max-width: 1366px; }
 
 a {
   text-decoration: none; }
@@ -174,28 +176,127 @@ a {
     grid-area: sect3; }
   .container__title {
     font-size: 1.125rem;
-    color: #333333;
     line-height: 1;
     font-weight: 600;
     padding-bottom: 20px;
     margin: 0; }
-  .container__block {
+  .container__main-block {
+    width: 100%;
+    height: 331px;
+    background-image: url("../img/container/container__block/container__block_large/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: auto;
+    padding: 25px;
     border-radius: 20px;
-    background-color: #f7f7f7;
-    padding: 15px;
-    transition: all 0.5s ease-out;
-    cursor: pointer;
-    width: 200px;
-    height: 100px; }
-    .container__block:hover {
-      background-color: white;
-      box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5); }
-    .container__block_large {
-      width: 100%;
-      height: 331px;
-      background-image: url("../img/container/container__block/container__block_large/bg.png");
+    position: relative;
+    overflow: hidden; }
+    .container__main-block_after:after {
+      content: "";
+      position: absolute;
+      background-image: url("../img/container/container__block/container__block_large/arrow.png");
       background-repeat: no-repeat;
-      cursor: auto; }
+      width: 16px;
+      height: 16px;
+      bottom: 7px;
+      right: 114px;
+      animation: move 1s infinite ease-in-out; }
+
+@keyframes move {
+  from {
+    bottom: 7px; }
+  50% {
+    bottom: 14px; }
+  to {
+    bottom: 7px; } }
+  .container__greeting {
+    font-size: 1.6875rem;
+    line-height: 2rem;
+    font-weight: 600;
+    padding-bottom: 5px;
+    margin: 0; }
+  .container__pre-info {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-weight: 100;
+    margin: 0; }
+
+.container-block {
+  border-radius: 20px;
+  background-color: #f7f7f7;
+  padding: 15px;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative; }
+  .container-block__icon {
+    position: absolute;
+    top: 15px; }
+  .container-block:hover {
+    background-color: white;
+    box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.5); }
+  .container-block_planned {
+    height: 120px; }
+  .container-block__title {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
+    font-weight: 600; }
+  .container-block__status {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    color: #858585;
+    display: inline-block;
+    width: 100%;
+    margin-top: 4px; }
+
+/* Weather */
+.weather {
+  margin-top: 25px; }
+  .weather__section {
+    display: inline-block;
+    width: 74px;
+    position: relative; }
+    .weather__section:last-child:after {
+      content: "";
+      position: absolute;
+      background-image: url("../img/container/container__block/container__block_large/cloud-drizzle.png");
+      width: 26px;
+      height: 26px;
+      bottom: 8px;
+      right: -20px; }
+  .weather__text {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: #858585; }
+  .weather__temp {
+    font-size: 2.25rem;
+    letter-spacing: 0;
+    line-height: 2.625rem;
+    font-weight: 600;
+    padding-top: 4px; }
+
+/* Planned-scenario */
+.planned-scenario {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  overflow-y: auto;
+  height: 100%;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none; }
+  .planned-scenario::-webkit-scrollbar {
+    width: 0; }
 
 /* Media */
 /* Mobile */

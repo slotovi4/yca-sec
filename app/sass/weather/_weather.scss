@@ -1,0 +1,33 @@
+.weather {
+  margin-top: 25px;
+
+  &__section {
+    display: inline-block;
+    width: 74px;
+    position: relative;
+
+    &:last-child:after {
+      content: "";
+      position: absolute;
+      background-image: url("../img/container/container__block/container__block_large/cloud-drizzle.png");
+      width: 26px;
+      height: 26px;
+      bottom: 8px;
+      right: -20px;
+    }
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: #858585;
+  }
+
+  &__temp {
+    font-size: 2.25rem;
+    letter-spacing: 0;
+    line-height: 2.625rem;
+    font-weight: 600;
+    padding-top: 4px;
+  }
+}

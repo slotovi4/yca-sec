@@ -1,0 +1,15 @@
+.planned-scenario {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  overflow-y: auto;
+  height: 100%;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
