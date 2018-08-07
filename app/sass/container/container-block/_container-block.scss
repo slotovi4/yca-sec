@@ -14,6 +14,28 @@
   &__icon {
     position: absolute;
     top: 15px;
+    width: 24px;
+    height: 24px;
+
+    &_temp {
+      background-image: url("../img/container/container__block/temp.png");
+    }
+
+    &_temp-active {
+      background-image: url("../img/container/container__block/temp-active.png");
+    }
+
+    &_sun {
+      background-image: url("../img/container/container__block/sun.png");
+    }
+
+    &_sun-active {
+      background-image: url("../img/container/container__block/sun-active.png");
+    }
+
+    &_time {
+      background-image: url("../img/container/container__block/time.png");
+    }
   }
 
   &:hover {
