@@ -130,7 +130,7 @@ a {
   padding-top: 30px;
   padding-left: 40px;
   padding-right: 40px;
-  padding-bottom: 125px;
+  padding-bottom: 130px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px 25px;
@@ -322,7 +322,8 @@ a {
   position: absolute;
   overflow-x: auto;
   padding-bottom: 5px;
-  padding-top: 5px; }
+  padding-top: 5px;
+  transition: all 0.5s ease-out; }
 
 /* Media */
 /* Mobile */
