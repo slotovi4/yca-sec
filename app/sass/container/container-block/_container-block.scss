@@ -6,8 +6,6 @@
   cursor: pointer;
   width: 200px;
   height: 100px;
-  margin-bottom: 15px;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -25,6 +23,7 @@
 
   &_planned {
     height: 120px;
+    margin-bottom: 15px;
   }
 
   &__title {

@@ -1,0 +1,7 @@
+.favorites-scenarios {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(3, 200px);
+  grid-auto-columns: 200px;
+  grid-gap: 15px;
+}
