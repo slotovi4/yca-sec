@@ -142,7 +142,8 @@ a {
     .container__section_sect1 {
       grid-column: span 1; }
     .container__section_sect2 {
-      grid-column: span 1; }
+      grid-column: span 1;
+      overflow: hidden; }
     .container__section_sect3 {
       grid-column: span 2;
       padding-top: 5px; }
@@ -262,11 +263,15 @@ a {
     width: 7px;
     height: 16px;
     display: inline-block;
-    cursor: pointer; }
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.2s ease-out; }
     .container-slide__arrow_prev {
       margin-right: 20px; }
     .container-slide__arrow_next {
       transform: rotate(180deg); }
+    .container-slide__arrow_active {
+      opacity: 1; }
 
 /* Weather */
 .weather {
@@ -314,7 +319,8 @@ a {
   grid-auto-flow: dense;
   grid-template-columns: repeat(3, 200px);
   grid-auto-columns: 200px;
-  grid-gap: 15px; }
+  grid-gap: 15px;
+  position: absolute; }
 
 /* Favorites device */
 .favorites-device {

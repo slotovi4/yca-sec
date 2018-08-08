@@ -13,6 +13,8 @@
     height: 16px;
     display: inline-block;
     cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.2s ease-out;
 
     &_prev {
       margin-right: 20px;
@@ -21,8 +23,9 @@
     &_next {
       transform: rotate(180deg);
     }
-  }
 
-  &__active {
+    &_active {
+      opacity: 1;
+    }
   }
 }
