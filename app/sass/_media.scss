@@ -34,3 +34,52 @@
     display: block;
   }
 }
+
+/* Mobile */
+@media screen and (min-width: 900px) and (max-width: 1366px) {
+  .favorites-scenarios {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    padding-bottom: 40px;
+
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    & > .container-block {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    &-slide {
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  .container__section_sect2:after {
+    content: "";
+    position: absolute;
+    background-image: url(../img/container/container__block/container__block_large/arrow.png);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -8px;
+    -webkit-animation: a 1s infinite ease-in-out;
+    -moz-animation: a 1s infinite ease-in-out;
+    -o-animation: a 1s infinite ease-in-out;
+    animation: a 1s infinite ease-in-out;
+  }
+}

@@ -3,7 +3,10 @@ const arrowPrev = document.querySelector(".favorites-device__arrow_prev"); //Pre
 const arrowNext = document.querySelector(".favorites-device__arrow_next"); //Next Arrow
 const container = document.querySelector(".favorites-device"); //Get Container
 const slideNum = container.querySelectorAll(".container-block").length; //Number Of Slides
-const containerColums = 6; //Num Conatiner Colums
+const containerColums = parseInt(
+  parseInt(document.querySelector(".container__section_sect3").offsetWidth) /
+    200
+); //Num Conatiner Colums
 let slideMove = 0; //Number Of Moved Slides
 
 //Change Next Arrow
@@ -16,6 +19,7 @@ arrowPrev.addEventListener("click", PrewSlide);
 arrowNext.addEventListener("click", NextSlide);
 
 function NextSlide() {
+  console.log(containerColums);
   //Change Prev Arrow
   arrowPrev.classList.add("container-slide__arrow_active");
 

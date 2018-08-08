@@ -1,6 +1,7 @@
 .header-logo {
   display: inline-block;
   margin-right: 45px;
+  user-select: none;
 
   &__text {
     font-size: 1.4rem;
