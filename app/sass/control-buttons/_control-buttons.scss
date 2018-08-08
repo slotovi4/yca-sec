@@ -1,0 +1,24 @@
+.control-buttons {
+  display: inline-block;
+  margin-bottom: 20px;
+  user-select: none;
+
+  &__btn {
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    padding: 7px 14px;
+    font-size: 0.85rem;
+    line-height: 0.9375rem;
+    font-weight: 600;
+    margin-left: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: #c00;
+    }
+
+    &_active {
+      background-color: #ffd93e;
+    }
+  }
+}

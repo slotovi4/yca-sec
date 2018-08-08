@@ -191,53 +191,60 @@
             </div>
         </div>
         <div class="container__section container__section_sect3">
-            <h3 class="container__title">Избранные устройства</h3>
-            <div class="container-slide">
+            <span class="container__title">Избранные устройства</span>
+            <div class="control-buttons favorites-device-buttons">
+                <span class="control-buttons__btn control-buttons__btn_active" data-sort-block="-1">Все</span>
+                <span class="control-buttons__btn" data-sort-block="kitchen">Кухня</span>
+                <span class="control-buttons__btn" data-sort-block="hall">Зал</span>
+                <span class="control-buttons__btn" data-sort-block="bulbs">Лампочки</span>
+                <span class="control-buttons__btn" data-sort-block="cameras">Камеры</span>
+            </div>
+            <div class="container-slide favorites-slide">
                 <div class="container-slide__arrow container-slide__arrow_prev favorites-device__arrow_prev"></div>
                 <div class="container-slide__arrow container-slide__arrow_next favorites-device__arrow_next"></div>
             </div>
             <div class="favorites-device">
-                <div class="container-block container-block_device">
+                <div class="container-block container-block_device" data-sort-block="kitchen">
                     <div class="container-block__icon container-block__icon-sun container-block__icon_active"></div>
                     <span class="container-block__title">Xiaomi Yeelight LED Smart Bulb</span>
                     <span class="container-block__status">Включено</span>
                 </div>
-                <div class="container-block container-block_device">
+                <div class="container-block container-block_device" data-sort-block="hall">
                     <div class="container-block__icon container-block__icon-sun"></div>
                     <span class="container-block__title">D-Link Omna 180 Cam</span>
                     <span class="container-block__status">Включится в 17:00</span>
                 </div>
-                <div class="container-block container-block_device">
+                <div class="container-block container-block_device" data-sort-block="bulbs">
                     <div class="container-block__icon container-block__icon-temp"></div>
                     <span class="container-block__title">Elgato Eve Degree Connected</span>
-                    <span class="container-block__status">Включено до 17:00</span>
+                    <span class="container-block__status">Выключено до 17:00</span>
                 </div>
-                <div class="container-block container-block_device">
+                <div class="container-block container-block_device" data-sort-block="cameras">
                     <div class="container-block__icon container-block__icon-sun"></div>
                     <span class="container-block__title">LIFX Mini Day & Dusk A60 E27</span>
                     <span class="container-block__status">Включится в 17:00</span>
                 </div>
-                <div class="container-block container-block_device">
+                <div class="container-block container-block_device" data-sort-block="bulbs">
                     <div class="container-block__icon container-block__icon-sun container-block__icon_active"></div>
                     <span class="container-block__title">Xiaomi Mi Air Purifier 2S</span>
                     <span class="container-block__status">Включено</span>
                 </div>
-                <div class="container-block container-block_device">
+                <div class="container-block container-block_device" data-sort-block="hall">
                     <div class="container-block__icon container-block__icon-sun"></div>
                     <span class="container-block__title">Philips Zhirui</span>
-                    <span class="container-block__status">Включено</span>
+                    <span class="container-block__status">Выключено</span>
                 </div>
-                <div class="container-block container-block_device">
+                <div class="container-block container-block_device" data-sort-block="bulbs">
                     <div class="container-block__icon container-block__icon-sun container-block__icon_active"></div>
                     <span class="container-block__title">Xiaomi Yeelight LED Smart Bulb</span>
                     <span class="container-block__status">Включено</span>
                 </div>
-                <div class="container-block container-block_device">
+                <div class="container-block container-block_device" data-sort-block="kitchen">
                     <div class="container-block__icon container-block__icon-sun container-block__icon_active"></div>
                     <span class="container-block__title">Xiaomi Yeelight LED Smart Bulb</span>
                     <span class="container-block__status">Включено</span>
                 </div>
-                <div class="container-block container-block_device">
+                <div class="container-block container-block_device" data-sort-block="cameras">
                     <div class="container-block__icon container-block__icon-sun container-block__icon_active"></div>
                     <span class="container-block__title">Xiaomi Yeelight LED Smart Bulb</span>
                     <span class="container-block__status">Включено</span>
@@ -245,6 +252,14 @@
             </div>
         </div>
     </main>
+
+
+    <!-- <section class="popup" id="xiaomi-warm-flor">
+        <div class="popup__block">
+            <span class="popup__title"></span>
+            <span class="popup__status"></span>
+        </div>
+    </section> -->
 
 </body>
 
