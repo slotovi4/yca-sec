@@ -19,7 +19,6 @@ arrowPrev.addEventListener("click", PrewSlide);
 arrowNext.addEventListener("click", NextSlide);
 
 function NextSlide() {
-  console.log(containerColums);
   //Change Prev Arrow
   arrowPrev.classList.add("container-slide__arrow_active");
 

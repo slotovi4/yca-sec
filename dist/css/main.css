@@ -379,6 +379,97 @@ a {
       padding-right: 0; }
 
 /* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: all 0.5s ease-out;
+  background-color: rgba(51, 51, 51, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .popup__block {
+    position: relative;
+    width: 630px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 25px; }
+  .popup__title {
+    font-size: 1.7rem;
+    line-height: 1.875rem;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px;
+    font-weight: 600; }
+  .popup__status {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    display: inline-block;
+    width: 100%; }
+  .popup__buttons-block {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -80px;
+    display: flex;
+    justify-content: space-between; }
+  .popup__button {
+    background-color: white;
+    padding: 20px 100px;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+    transition: 0.5s all ease-out;
+    border-radius: 20px;
+    min-width: 307px;
+    text-align: center;
+    cursor: pointer; }
+    .popup__button_active {
+      background-color: #ffd93e;
+      color: black; }
+    .popup__button:hover {
+      background-color: #ffcd00;
+      color: black; }
+
+/* Xiaomi-warm-flor */
+.xiaomi-warm-flor {
+  width: 100%;
+  height: 221px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; }
+  .xiaomi-warm-flor__mask {
+    width: 100%;
+    height: 221px;
+    background-image: url("../img/xiaomi-warm-flor/oval.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(1);
+    position: absolute;
+    opacity: 0.5;
+    z-index: 1; }
+  .xiaomi-warm-flor__center-circle {
+    position: absolute;
+    display: inline-block;
+    width: 178px;
+    height: 178px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(134, 121, 71, 0.45);
+    z-index: 2; }
+  .xiaomi-warm-flor__counter {
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; }
+
 /* Media */
 /* Mobile */
 @media screen and (max-width: 576px) {
@@ -407,7 +498,7 @@ a {
   .header-mobile-btn {
     display: block; } }
 
-/* Mobile */
+/* Medium */
 @media screen and (min-width: 900px) and (max-width: 1366px) {
   .favorites-scenarios {
     display: flex;
