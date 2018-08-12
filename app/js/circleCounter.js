@@ -54,8 +54,7 @@ function circleCounter(status) {
 let fill = circleCounter(status);
 let x_start, //X start val
   y_start, //Y start val
-  oldValY, //Old Value Y
-  min_swip = 30; //Swip val
+  oldValY; //Old Value Y
 
 /* First Touch */
 counter.addEventListener("touchstart", getStartTouch, false);

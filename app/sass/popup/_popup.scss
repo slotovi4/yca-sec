@@ -36,6 +36,12 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+
+    &_sun {
+      background-image: url("../img/container/container__block/sun_2x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   &__block {
@@ -44,6 +50,61 @@
     border-radius: 20px;
     background-color: white;
     padding: 25px;
+  }
+
+  &__filter {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+
+  &__scale {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    background-image: linear-gradient(-85deg, #ff9e00 2%, #ffe682 98%);
+    border-radius: 30px;
+    position: relative;
+
+    &_yeelight {
+      &:after {
+        background-image: url("../img/container/container__block/sun_2x_white.png");
+        right: 5px;
+      }
+
+      &:before {
+        background-image: url("../img/container/container__block/sun_2x_white-low.png");
+        left: 5px;
+        transform: scale(0.7);
+      }
+
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100%;
+        width: 50px;
+        transform: scale(0.7);
+        z-index: 1;
+      }
+    }
+  }
+
+  &__controller {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 200px;
+    right: 0;
+    background-color: rgba($primary-text-color, 0.1);
+    border: 4px solid #ffffff;
+    box-shadow: inset 0 0px 0px 3px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
   }
 
   &__title {
