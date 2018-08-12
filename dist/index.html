@@ -214,7 +214,7 @@
                     <span class="container-block__title">D-Link Omna 180 Cam</span>
                     <span class="container-block__status">Включится в 17:00</span>
                 </div>
-                <div class="container-block container-block_device" data-sort-block="bulbs">
+                <div class="container-block container-block_device" data-sort-block="bulbs" data-popup-id='elgato-eve'>
                     <div class="container-block__icon container-block__icon-temp"></div>
                     <span class="container-block__title">Elgato Eve Degree Connected</span>
                     <span class="container-block__status">Выключено до 17:00</span>
@@ -295,13 +295,38 @@
             <div class="popup__icon popup__icon_sun"></div>
 
             <div class="control-buttons popup__filter">
-                <span class="control-buttons__btn control-buttons__btn_active">Вручную</span>
-                <span class="control-buttons__btn">Дневной свет</span>
-                <span class="control-buttons__btn">Вечерний свет</span>
-                <span class="control-buttons__btn">Рассвет</span>
+                <span class="control-buttons__btn control-buttons__btn_active" data-popup-data='-1'>Вручную</span>
+                <span class="control-buttons__btn" data-popup-data='2'>Дневной свет</span>
+                <span class="control-buttons__btn" data-popup-data='3'>Вечерний свет</span>
+                <span class="control-buttons__btn" data-popup-data='1'>Рассвет</span>
             </div>
 
             <div class="popup__scale popup__scale_yeelight">
+                <div class="popup__controller"></div>
+            </div>
+
+            <div class="popup__buttons-block">
+                <span class="popup__button popup__button_active">Применить</span>
+                <span class="popup__button popup__button_close">Закрыть</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="popup" id="elgato-eve">
+        <div class="popup__block">
+            <span class="popup__title">Elgato Eve Degree Connected</span>
+            <span class="popup__status">Включено</span>
+            <div class="popup__icon popup__icon_temp popup__icon_active"></div>
+            <span class="popup__status-temp">+23</span>
+
+            <div class="control-buttons popup__filter">
+                <span class="control-buttons__btn control-buttons__btn_active" data-popup-data='-1'>Вручную</span>
+                <span class="control-buttons__btn" data-popup-data='1'>Холодно</span>
+                <span class="control-buttons__btn" data-popup-data='2'>Тепло</span>
+                <span class="control-buttons__btn" data-popup-data='3'>Жарко</span>
+            </div>
+
+            <div class="popup__scale popup__scale_elgato">
                 <div class="popup__controller"></div>
             </div>
 

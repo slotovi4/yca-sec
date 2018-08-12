@@ -1,4 +1,4 @@
-/* Event handling touchstart/touchmove on the controller in ".popup__scale"*/
+/* Event handling touchstart/touchmove on the controller in ".popup__scale" */
 
 const controller = document.querySelectorAll(".popup__controller"); //Controller
 

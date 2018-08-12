@@ -1,3 +1,5 @@
+/* Event handling touchstart/touchmove on the circle controller in ".xiaomi-warm-flor" */
+
 const counter = document.getElementById("counter");
 const ctx = counter.getContext("2d");
 let pointToFill = 2.04; //Point from where to fill the circle
@@ -54,8 +56,7 @@ function circleCounter(status) {
 let fill = circleCounter(status);
 let x_start, //X start val
   y_start, //Y start val
-  oldValY, //Old Value Y
-  min_swip = 30; //Swip val
+  oldValY; //Old Value Y
 
 /* First Touch */
 counter.addEventListener("touchstart", getStartTouch, false);
@@ -87,11 +88,15 @@ counter.addEventListener(
         oldValY = yD;
       }
 
+      let arrowPositionX = document
+        .querySelector(".xiaomi-warm-flor__arrow")
+        .getBoundingClientRect().right; //Arrow Position X
+
       if (touchobj.clientX < centerX) {
         //Left Piece Circle
         oldValY > yD ? (status = true) : (status = false);
         oldValY = yD;
-      } else {
+      } else if (arrowPositionX > centerX) {
         //Right Piece Circle
         oldValY < yD ? (status = true) : (status = false);
         oldValY = yD;
@@ -357,6 +362,37 @@ function OpenPopup() {
   if (popup) popup.classList.add("popup_active");
 }
 
+/* Event handling click on the filter buttons in ".popup__filter" */
+
+const popupFilterButtons = document.querySelectorAll(
+  ".control-buttons__btn[data-popup-data]"
+);
+
+popupFilterButtons.forEach(item => item.addEventListener("click", filterPopup));
+
+function filterPopup() {
+  let PopupControlContainer = this.closest(".popup__filter"); //Controlls Container
+  let PopupController = PopupControlContainer.closest(
+    ".popup__block"
+  ).querySelector(".popup__controller"); //Popup Controller
+
+  //Remove Active Style
+  PopupControlContainer.querySelector(
+    ".control-buttons__btn_active"
+  ).classList.remove("control-buttons__btn_active");
+
+  //Add Active Style
+  this.classList.add("control-buttons__btn_active");
+
+  //Get Data
+  let PopupControlData = this.getAttribute("data-popup-data");
+
+  //Move Popup Controller
+  if (PopupControlData != -1) {
+    PopupController.style.left = PopupControlData * 25 + "%";
+  }
+}
+
 const closeButton = document.querySelectorAll(".popup__button_close");
 
 closeButton.forEach(item => item.addEventListener("click", ClosePopup));
@@ -365,6 +401,8 @@ function ClosePopup() {
   let popup = this.closest(".popup");
   popup.classList.remove("popup_active");
 }
+
+/* Event handling touchstart/touchmove on the controller in ".popup__scale" */
 
 const controller = document.querySelectorAll(".popup__controller"); //Controller
 

@@ -1,3 +1,5 @@
+/* Event handling touchstart/touchmove on the circle controller in ".xiaomi-warm-flor" */
+
 const counter = document.getElementById("counter");
 const ctx = counter.getContext("2d");
 let pointToFill = 2.04; //Point from where to fill the circle
@@ -86,11 +88,15 @@ counter.addEventListener(
         oldValY = yD;
       }
 
+      let arrowPositionX = document
+        .querySelector(".xiaomi-warm-flor__arrow")
+        .getBoundingClientRect().right; //Arrow Position X
+
       if (touchobj.clientX < centerX) {
         //Left Piece Circle
         oldValY > yD ? (status = true) : (status = false);
         oldValY = yD;
-      } else {
+      } else if (arrowPositionX > centerX) {
         //Right Piece Circle
         oldValY < yD ? (status = true) : (status = false);
         oldValY = yD;
