@@ -385,11 +385,31 @@ a {
   left: 0;
   width: 100%;
   height: 100vh;
-  transition: all 0.5s ease-out;
+  transition: all 0.2s ease-out;
+  transform: scale(0.2);
+  opacity: 0;
+  z-index: -1;
   background-color: rgba(51, 51, 51, 0.5);
   display: flex;
   justify-content: center;
   align-items: center; }
+  .popup_active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 10; }
+  .popup__icon {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 50px;
+    height: 50px;
+    filter: grayscale(1); }
+    .popup__icon_active {
+      filter: grayscale(0); }
+    .popup__icon_temp {
+      background-image: url("../img/container/container__block/temp_2x.png");
+      background-repeat: no-repeat;
+      background-position: center; }
   .popup__block {
     position: relative;
     width: 630px;
@@ -408,6 +428,13 @@ a {
     line-height: 1rem;
     display: inline-block;
     width: 100%; }
+  .popup__status-temp {
+    position: absolute;
+    right: 75px;
+    top: 25px;
+    font-size: 2.25rem;
+    line-height: 3.125rem;
+    font-weight: 600; }
   .popup__buttons-block {
     position: absolute;
     width: 100%;
@@ -445,12 +472,11 @@ a {
   .xiaomi-warm-flor__mask {
     width: 100%;
     height: 221px;
-    background-image: url("../img/xiaomi-warm-flor/oval.png");
+    background-image: url("../img/xiaomi-warm-flor/oval_2.png");
     background-repeat: no-repeat;
     background-position: center;
     filter: grayscale(1);
     position: absolute;
-    opacity: 0.5;
     z-index: 1; }
   .xiaomi-warm-flor__center-circle {
     position: absolute;
@@ -461,6 +487,18 @@ a {
     background-color: white;
     box-shadow: 0 2px 4px 0 rgba(134, 121, 71, 0.45);
     z-index: 2; }
+  .xiaomi-warm-flor__arrow {
+    position: absolute;
+    background-image: url("../img/xiaomi-warm-flor/arrow.png");
+    transform: rotate(-150deg);
+    width: 12px;
+    height: 8px;
+    bottom: 10px;
+    left: 44px; }
+  .xiaomi-warm-flor__arrow-move {
+    width: 100%;
+    height: 100%;
+    position: absolute; }
   .xiaomi-warm-flor__counter {
     background-repeat: no-repeat;
     background-position: center;
