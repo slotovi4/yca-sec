@@ -64,7 +64,8 @@ a {
   border-bottom: 1px solid #f0f0f0;
   display: flex;
   align-items: center;
-  position: relative; }
+  position: relative;
+  z-index: 90; }
   .header__link {
     font-size: 1rem;
     line-height: 20px;
@@ -107,7 +108,8 @@ a {
   position: absolute;
   cursor: pointer;
   transition: all 0.5s ease-out;
-  right: 20px; }
+  padding: 10px;
+  right: 10px; }
   .header-mobile-btn__line {
     width: 1rem;
     height: 3px;
@@ -320,7 +322,8 @@ a {
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none; }
   .planned-scenario::-webkit-scrollbar {
-    width: 0; }
+    width: 0;
+    display: none; }
 
 /* Favorites scenarios */
 .favorites-scenarios {
@@ -353,9 +356,10 @@ a {
     line-height: 0.9375rem;
     font-weight: 600;
     margin-left: 5px;
-    cursor: pointer; }
-    .control-buttons__btn:hover {
-      color: #c00; }
+    cursor: pointer;
+    /*  &:hover {
+      color: #c00;
+    } */ }
     .control-buttons__btn_active {
       background-color: #ffd93e; }
 
@@ -397,7 +401,7 @@ a {
   .popup_active {
     transform: scale(1);
     opacity: 1;
-    z-index: 10; }
+    z-index: 100; }
   .popup__icon {
     position: absolute;
     right: 25px;
@@ -569,15 +573,23 @@ a {
     z-index: 3; }
 
 /* Media */
+@media screen and (max-width: 899px) and (min-height: 800px) {
+  .footer {
+    position: fixed !important; } }
+
 /* Mobile */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 899px) {
   .header {
     padding: 12px 20px 15px 20px;
-    border: none; }
+    border: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white; }
     .header__menu {
       visibility: hidden;
       position: fixed;
-      background-color: rgba(51, 51, 51, 0.1);
+      background-color: rgba(51, 51, 51, 0.8);
       top: 0;
       left: 0;
       width: 100%;
@@ -587,17 +599,222 @@ a {
       justify-content: center;
       align-items: center;
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      z-index: 90; }
     .header__link {
       padding: 0;
-      line-height: 30px; }
+      line-height: 30px;
+      color: white; }
+      .header__link_active {
+        color: #ffd93e; }
   .header-logo {
     margin: 0; }
   .header-mobile-btn {
-    display: block; } }
+    display: block;
+    z-index: 100; }
+    .header-mobile-btn__line_close {
+      background-color: white; }
+  .control-buttons:hover {
+    color: inherit; }
+  .container {
+    padding: 0 20px 0 20px;
+    row-gap: 30px;
+    column-gap: 0;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 54px; }
+    .container__section_sect1 {
+      grid-column: span 2;
+      padding-bottom: 0; }
+    .container__section_sect2 {
+      grid-column: span 2;
+      height: 100%; }
+    .container__section_sect3 {
+      height: 100%; }
+    .container__title {
+      font-size: 1rem;
+      line-height: 1.375rem; }
+      .container__title_first {
+        display: none; }
+    .container__greeting {
+      font-size: 1.125rem;
+      line-height: 1.375rem; }
+    .container__pre-info {
+      font-size: 0.75rem;
+      line-height: 0.875rem; }
+    .container__main-block {
+      padding: 20px 0 0 20px;
+      min-width: 100%;
+      height: 282px; }
+      .container__main-block_after:after {
+        content: none; }
+    .container-slide {
+      display: none; }
+    .container-block:hover {
+      background-color: #f7f7f7; }
+    .container-block_planned {
+      margin-bottom: 0;
+      width: auto;
+      margin-left: 20px;
+      white-space: nowrap; }
+    .container-block_device {
+      width: auto;
+      margin-left: 0;
+      white-space: nowrap;
+      margin-right: 20px; }
+  .planned-scenario {
+    left: 0px;
+    bottom: 20px;
+    display: flex;
+    height: auto;
+    overflow-y: unset;
+    overflow-x: auto;
+    top: unset;
+    padding-bottom: 0;
+    padding-top: 0;
+    width: 100%; }
+  .favorites-scenarios {
+    display: flex;
+    overflow-x: auto;
+    position: relative;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    padding-bottom: 5px; }
+    .favorites-scenarios::-webkit-scrollbar {
+      width: 0;
+      display: none; }
+    .favorites-scenarios > .container-block {
+      margin-right: 20px;
+      white-space: nowrap;
+      width: auto; }
+  .favorites-device {
+    display: flex;
+    overflow-x: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    position: relative;
+    margin-top: 20px;
+    padding-top: 0; }
+    .favorites-device::-webkit-scrollbar {
+      width: 0;
+      display: none; }
+    .favorites-device-buttons {
+      position: absolute;
+      text-align: center;
+      margin-bottom: 0;
+      z-index: 10;
+      overflow: hidden;
+      height: 30px;
+      top: -3px;
+      right: 0;
+      display: flex;
+      flex-direction: column; }
+      .favorites-device-buttons_mob-active {
+        overflow: unset;
+        height: 100%;
+        background-color: white; }
+      .favorites-device-buttons > .control-buttons__btn {
+        margin-left: 0;
+        display: inline-block;
+        margin-bottom: 5px;
+        position: relative; }
+        .favorites-device-buttons > .control-buttons__btn:first-child {
+          padding-right: 26px; }
+          .favorites-device-buttons > .control-buttons__btn:first-child:after {
+            content: ">";
+            width: 12px;
+            height: 12px;
+            transform: rotate(90deg);
+            font-size: 12px;
+            line-height: 12px;
+            position: absolute;
+            right: 10px;
+            top: 0;
+            margin-top: 9px; }
+      .favorites-device-buttons .control-buttons__btn_rotate:after {
+        transform: rotate(-90deg) !important;
+        top: -1px; }
+  .xiaomi-warm-flor {
+    margin-top: 90px; }
+  .popup {
+    padding: 20px;
+    align-items: unset;
+    overflow-x: hidden;
+    overflow-y: auto; }
+    .popup__block {
+      padding: 20px;
+      height: 492px;
+      width: 100%; }
+    .popup__status {
+      font-size: 0.75rem;
+      line-height: 0.875rem; }
+      .popup__status-temp {
+        display: none; }
+    .popup__title {
+      font-size: 1.125rem;
+      line-height: 1.375rem; }
+    .popup__icon {
+      display: none; }
+    .popup__controller {
+      left: 0; }
+    .popup__buttons-block {
+      display: flex;
+      flex-direction: column;
+      bottom: -174px; }
+    .popup__scale_elgato:after, .popup__scale_elgato:before {
+      transform: rotate(90deg); }
+    .popup__scale_mobile {
+      transform: rotate(-90deg);
+      margin-left: -165px;
+      left: 50%;
+      width: 336px;
+      bottom: 0;
+      margin-bottom: 148px;
+      position: absolute; }
+    .popup__button {
+      min-width: 100%;
+      margin-top: 15px;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center; }
+      .popup__button:last-child {
+        margin-bottom: 20px; }
+    .popup__filter {
+      overflow-x: auto;
+      overflow: -moz-scrollbars-none;
+      -ms-overflow-style: none;
+      display: flex; }
+      .popup__filter::-webkit-scrollbar {
+        width: 0;
+        display: none; }
+      .popup__filter > .control-buttons__btn {
+        margin-left: 0;
+        white-space: nowrap;
+        width: auto;
+        margin-right: 10px;
+        font-size: 0.8125rem; }
+  .footer {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+    height: 100px;
+    position: relative; }
+    .footer__menu {
+      margin-bottom: 20px; }
+  .weather {
+    margin-top: 15px; }
+    .weather__section {
+      width: 60px; }
+      .weather__section:last-child:after {
+        bottom: 0px; }
+    .weather__text {
+      font-size: 0.75rem;
+      line-height: 0.875rem; }
+    .weather__temp {
+      font-size: 1.5rem;
+      line-height: 1.75rem; } }
 
 /* Medium */
-@media screen and (min-width: 900px) and (max-width: 1366px) {
+@media screen and (min-width: 900px) and (max-width: 1365px) {
   .favorites-scenarios {
     display: flex;
     justify-content: space-evenly;
@@ -609,7 +826,8 @@ a {
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none; }
     .favorites-scenarios::-webkit-scrollbar {
-      width: 0; }
+      width: 0;
+      display: none; }
     .favorites-scenarios > .container-block {
       margin-bottom: 15px; }
       .favorites-scenarios > .container-block:last-child {

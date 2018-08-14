@@ -134,31 +134,59 @@ const Blocks = BlocksContainer.querySelectorAll(".container-block"); //Blocks
 //Event
 buttons.forEach(item => item.addEventListener("click", SortBlocks));
 
+/* Mobile */
+let g = document.getElementsByTagName("body")[0],
+  screenWidth =
+    window.innerWidth || document.documentElement.clientWidth || g.clientWidth;
+
+if (screenWidth < 899) {
+  let ActiveMobButt = ButtContainer.querySelector(
+    ".control-buttons__btn_active"
+  );
+  let ActiveButtClick = false;
+
+  ActiveMobButt.addEventListener("click", function() {
+    if (!ActiveButtClick) {
+      this.classList.add("control-buttons__btn_rotate");
+      ButtContainer.classList.add("favorites-device-buttons_mob-active");
+      ActiveButtClick = true;
+    } else {
+      this.classList.remove("control-buttons__btn_rotate");
+      ButtContainer.classList.remove("favorites-device-buttons_mob-active");
+      ActiveButtClick = false;
+    }
+  });
+}
+
 //Sort Blocks
 function SortBlocks() {
   //Styles
-  buttons.forEach(
-    item =>
-      item.classList.contains("control-buttons__btn_active")
-        ? item.classList.remove("control-buttons__btn_active")
-        : 0
-  );
-  this.classList.add("control-buttons__btn_active");
-
-  //Get Sort Block
-  let SortBlockData = this.getAttribute("data-sort-block");
-
-  //Show Sort Block
-  if (SortBlockData == -1) {
-    Blocks.forEach(item => (item.style.display = "flex"));
+  if (this.classList.contains("control-buttons__btn_rotate")) {
+    return;
   } else {
-    for (let i = 0; i < Blocks.length; i++) {
-      let BlockData = Blocks[i].getAttribute("data-sort-block");
+    buttons.forEach(
+      item =>
+        item.classList.contains("control-buttons__btn_active")
+          ? item.classList.remove("control-buttons__btn_active")
+          : 0
+    );
+    this.classList.add("control-buttons__btn_active");
 
-      if (BlockData && BlockData != SortBlockData) {
-        Blocks[i].style.display = "none";
-      } else {
-        Blocks[i].style.display = "flex";
+    //Get Sort Block
+    let SortBlockData = this.getAttribute("data-sort-block");
+
+    //Show Sort Block
+    if (SortBlockData == -1) {
+      Blocks.forEach(item => (item.style.display = "flex"));
+    } else {
+      for (let i = 0; i < Blocks.length; i++) {
+        let BlockData = Blocks[i].getAttribute("data-sort-block");
+
+        if (BlockData && BlockData != SortBlockData) {
+          Blocks[i].style.display = "none";
+        } else {
+          Blocks[i].style.display = "flex";
+        }
       }
     }
   }
@@ -414,25 +442,49 @@ controller.forEach(item => {
 
 /* Get Start Controller Position */
 function startController(e) {
-  conXstart = e.touches[0].pageX; //Srart Cursor
+  conXstart = e.touches[0].pageX; //Srart X Cursor
+  conYstart = e.touches[0].pageY; //Srart Y Cursor
   contPositionL = this.getBoundingClientRect().left; //Left Position Controller on X page
   contPositionR = this.getBoundingClientRect().right; //Left Position Controller on X page
+
+  contPositionB = this.getBoundingClientRect().bottom; //Bottom Position Controller on X page
 }
 
 /* Move Controller */
 function moveController(e) {
   let conX = e.touches[0].pageX - conXstart; //Move Value
+  let conY = conYstart - e.touches[0].pageY; //Move Value
   let scale = this.closest(".popup__scale"); //Scale Block
-  let scaleLeft = scale.getBoundingClientRect().left; //Scale Left Page Position
-  let scaleRight = scale.getBoundingClientRect().right; //Scale Right Page Position
 
-  let contLeft = contPositionL - scaleLeft; //Controller Style Left Value
-  let contRight = contPositionR - scaleRight; //Controller Style Left Value
-  let scaleWidth = scale.getBoundingClientRect().width; //Scale Width
+  let g = document.getElementsByTagName("body")[0],
+    screenWidth =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      g.clientWidth;
 
-  if (contRight + conX >= 0) this.style.left = scaleWidth - 60 + "px";
-  else if (contLeft + conX <= 0) this.style.left = "0px";
-  else this.style.left = contLeft + conX + "px";
+  /* Desktop */
+  if (screenWidth > 899) {
+    let scaleLeft = scale.getBoundingClientRect().left; //Scale Left Page Position
+    let scaleRight = scale.getBoundingClientRect().right; //Scale Right Page Position
+
+    let contLeft = contPositionL - scaleLeft; //Controller Style Left Value
+    let contRight = contPositionR - scaleRight; //Controller Style Left Value
+    let scaleWidth = scale.getBoundingClientRect().width; //Scale Width
+
+    if (contRight + conX >= 0) this.style.left = scaleWidth - 60 + "px";
+    else if (contLeft + conX <= 0) this.style.left = "0px";
+    else this.style.left = contLeft + conX + "px";
+  } else {
+    /* Mobile */
+    let scaleBottom = scale.getBoundingClientRect().bottom; //Scale Bottom Page Position
+    let contBottom = scaleBottom - contPositionB; //Controller Style Bottom Value
+    let scaleHeight = scale.getBoundingClientRect().height; //Scale Height
+
+    if (contBottom + conY <= 0) this.style.left = "0px";
+    else if (contBottom + conY + 60 >= scaleHeight)
+      this.style.left = scaleHeight - 60 + "px";
+    else this.style.left = contBottom + conY + "px";
+  }
 
   e.preventDefault();
 }
